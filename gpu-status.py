@@ -97,13 +97,14 @@ def pretty_print(status, verbose=False):
                                                              color_out,
                                                              stats['mem_total'])
         print header
-        print ('-'*len(header))
+        print ('-'*(len(header) - len(color_in) - len(color_out)))
         for proc in stats['proc']:
             line = '{} - {} MiB'.format(proc['user'], proc['mem'])
             print(line)
             if verbose:
                 print(proc['command'])
                 print('')
+        print('\n')
 
 
 if __name__ == '__main__':
