@@ -5,7 +5,6 @@ import os
 import pwd
 import argparse
 import psutil
-import socket
 
 
 def owner(pid):
@@ -113,9 +112,5 @@ if __name__ == '__main__':
     args = vars(parser.parse_args())
 
     verbose = args['v']
-
-    hostname = socket.gethostname()
-    if hostname == 'halmos':
-        print('!!! Halmos has GPU 0 and GPU 3 switched !!!\n')
 
     pretty_print(get_status(), verbose)
